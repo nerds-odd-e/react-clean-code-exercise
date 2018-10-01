@@ -5,7 +5,9 @@ export default class Page extends Component {
     return (
       <div>
         <Header/>
+        <div style={{textAlign: 'center'}}>
         {this.props.children}
+        </div>
       </div>
       )
   }

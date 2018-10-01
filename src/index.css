@@ -12,3 +12,34 @@ a, a:visited {
   text-decoration: none;
   color: #2c3e50;
 }
+
+.form-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.form-item .label {
+  display: flex;
+  width: 100px;
+}
+
+.form-item .editor {
+  display: flex;
+  width: 150px;
+}
+
+.form-item .error {
+  display: flex;
+  width: 200px;
+  color: red;
+  font-size: 14px;
+}
+
+.button {
+  height: 33px;
+  font-size: 14px;
+  width: 65px;
+  margin-right: 5px;
+}

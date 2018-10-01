@@ -14,9 +14,13 @@ export default class BudgetList extends React.Component {
     this.setState({budgets: Api.getBudgets()})
   }
 
+  gotoAddBudget() {
+    this.props.history.push('/budgets/add')
+  }
+
   render() {
     return (
-      <div style={{fontSize: 14 + 'px', textAlign: 'center'}}>
+      <div style={{fontSize: 14 + 'px'}}>
         <h2>Budgets</h2>
         <div style={{
           display: 'flex',
@@ -50,7 +54,7 @@ export default class BudgetList extends React.Component {
             </div>
           )}
         </div>
-        <div style={{
+        <div onClick={() => this.gotoAddBudget()} style={{
           alignItems: 'center',
           cursor: 'pointer',
           display: 'flex',

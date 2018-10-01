@@ -5,9 +5,9 @@ import BudgetList from './BudgetList'
 import AddBudget from './AddBudget'
 import Page from './Page'
 
-const layout = Component => () =>
+const layout = Component => (props) =>
   <Page>
-    <Component/>
+    <Component {...props}/>
   </Page>
 
 export default () => {
