@@ -1,0 +1,8 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+header {
+    padding: 20px;
+}
