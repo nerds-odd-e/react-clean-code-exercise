@@ -33,7 +33,7 @@ export default class AddBudget extends React.Component {
     if (budget.amount === '') {
       errors.amount = 'Amount cannot be empty'
       amountValid = false
-    } else if (isNaN(parseInt(budget.amount)) || budget.amount < 0) {
+    } else if (isNaN(parseInt(budget.amount, 10)) || budget.amount < 0) {
       errors.amount = 'Invalid amount'
       amountValid = false
     } else {
