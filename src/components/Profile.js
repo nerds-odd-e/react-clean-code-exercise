@@ -1,6 +1,6 @@
 import React from 'react'
 import merge from 'lodash/merge'
-import Api from "./api";
+import Api from "../api";
 
 export default class Profile extends React.Component {
   state = {

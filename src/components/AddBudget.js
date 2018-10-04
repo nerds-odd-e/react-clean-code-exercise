@@ -1,5 +1,5 @@
 import React from 'react'
-import Api from "./api";
+import Api from "../api";
 
 export default class AddBudget extends React.Component {
   state = {
