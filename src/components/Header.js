@@ -5,15 +5,18 @@ import TimeProvider from '../domain/timeProvider'
 
 export default class Header extends React.Component {
   state = {
-    profile: { name: 'Jackson', birthday: {month: 10, day: 18}}
+    profile: { name: 'Jackson', birthday: {month: 10, day: 18}},
+    today: new Date()
+  }
+  componentDidMount() {
+    TimeProvider.getDatePromise().then(today => this.setState({today}))
   }
   profileCaption() {
     let {profile: {name}} = this.state
     return name === '' ? 'Profile' : `${name}${this._isBirthday() ? '🎂' : ''}`
   }
   _isBirthday(){
-    let today = TimeProvider.now()
-    let {profile: {birthday: {month, day}}} = this.state
+    let {today, profile: {birthday: {month, day}}} = this.state
     return today.getMonth() === month - 1 && today.getDate() === day
   }
   render() {
