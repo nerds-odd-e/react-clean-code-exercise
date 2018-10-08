@@ -45,7 +45,7 @@ export default class AddBudget extends React.Component {
       return
     }
     let budgets = Api.getBudgets()
-    let existing = budgets.find(existedBudget => existedBudget.month === budget.month)
+    let existing = budgets && budgets.find(existedBudget => existedBudget.month === budget.month)
     if (existing) {
       Api.updateBudget(budget)
     } else {

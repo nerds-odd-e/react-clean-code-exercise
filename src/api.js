@@ -1,4 +1,4 @@
-const INITIAL_PROFILE = {name: 'Jackson', birthday: {year: 1982, month: 10, day: 18}};
+// const INITIAL_PROFILE = {name: 'Jackson', birthday: {year: 1982, month: 10, day: 18}};
 const INITIAL_BUDGETS = [
   {month: '2018-01', amount: 31000},
   {month: '2018-02', amount: 2800},
@@ -7,10 +7,10 @@ const INITIAL_BUDGETS = [
   {month: '2018-05', amount: 31000},
 ];
 let budgets = INITIAL_BUDGETS
-function load(name, defaultValue){
+function load(name){
   const serializedData = localStorage.getItem(name)
   if(serializedData === null){
-    return defaultValue
+    return null
   }
 
   let data = JSON.parse(serializedData);
@@ -22,16 +22,19 @@ function save(name, data){
 }
 export default {
   getProfile() {
-    return load('profile', INITIAL_PROFILE)
+    return load('profile')
   },
   updateProfile(profile) {
     save('profile', profile)
   },
   getBudgets() {
-    budgets = load('budgets', INITIAL_BUDGETS)
+    budgets = load('budgets')
     return budgets
   },
   addBudget(budget) {
+    if (budgets === null){
+      budgets = []
+    }
     budgets.push(budget)
     save('budgets', budgets)
   },

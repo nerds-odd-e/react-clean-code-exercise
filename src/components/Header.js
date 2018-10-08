@@ -4,7 +4,7 @@ import './Header.css'
 
 export default class Header extends React.Component {
   state = {
-    profile: { name: '', birthday: {month: 0, day: 0}}
+    profile: { name: 'Jackson', birthday: {month: 10, day: 18}}
   }
   profileCaption() {
     let {profile: {name}} = this.state

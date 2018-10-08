@@ -11,7 +11,11 @@ export default class BudgetList extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({budgets: Api.getBudgets()})
+    let budgets = Api.getBudgets()
+    if (budgets === null){
+      budgets = []
+    }
+    this.setState({budgets})
   }
 
   gotoAddBudget() {
